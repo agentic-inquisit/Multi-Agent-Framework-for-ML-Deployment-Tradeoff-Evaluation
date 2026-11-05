@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[co]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets / local env overrides
+.env
+.env.*
+!.env.example
+
+# LangGraph local dev artifacts
+.langgraph_api/
+
+# Rust (Cargo.lock is committed — apv-gateway is a binary, not a library)
+gateway/target/
+
+# Internal planning doc — stays local, not pushed to the repo
+PROPOSAL.md 
+
+# Superseded product-validation-domain agents/prompts — kept on disk for
+# reference, not part of the ML-tradeoff-eval pipeline this repo ships now
+worker/prompts/build_strategist.md
+worker/prompts/competitor_intel.md
+worker/prompts/customer_research.md
+worker/prompts/trend_intel.md
+worker/src/agents/build_strategist.py
+worker/src/agents/competitor_intel.py
+worker/src/agents/customer_research.py
+worker/src/agents/trend_intel.py
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS noise
+.DS_Store
+Thumbs.db
