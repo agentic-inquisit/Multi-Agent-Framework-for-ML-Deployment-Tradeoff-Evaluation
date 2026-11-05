@@ -1,0 +1,9 @@
+langgraph>=0.6
+langgraph-cli[inmem]>=0.2   # `langgraph dev` local dev server
+langchain-anthropic>=0.4
+langgraph-checkpoint-sqlite>=2.0   # dev checkpointer
+langgraph-checkpoint-postgres>=2.0  # prod checkpointer
+pydantic>=2.9
+fastapi>=0.115
+uvicorn[standard]>=0.32
+python-dotenv>=1.0
