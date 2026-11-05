@@ -1,0 +1,31 @@
+services:
+  gateway:
+    build: ./gateway
+    ports:
+      - "8080:8080"
+    environment:
+      WORKER_URL: http://worker:8000
+      GATEWAY_API_KEY: ${GATEWAY_API_KEY:-dev-key}
+    depends_on:
+      - worker
+
+  worker:
+    build: ./worker 
+    env_file:
+      - ./worker/.env
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: apv
+      POSTGRES_PASSWORD: apv
+      POSTGRES_DB: apv_checkpoints
+    volumes:
+      - apv_postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  apv_postgres_data:
