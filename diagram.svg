@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1200" height="500" fill="#ffffff"/>
+
+  <!-- robot icon def -->
+  <defs>
+    <g id="robot">
+      <rect x="6" y="0" width="6" height="10" fill="#16324f"/>
+      <circle cx="9" cy="-2" r="3" fill="#16324f"/>
+      <rect x="0" y="10" width="36" height="28" rx="8" fill="#16324f"/>
+      <circle cx="10" cy="24" r="4" fill="#ffffff"/>
+      <circle cx="26" cy="24" r="4" fill="#ffffff"/>
+      <rect x="10" y="31" width="16" height="3" rx="1.5" fill="#ffffff"/>
+      <rect x="4" y="40" width="28" height="22" rx="6" fill="#16324f"/>
+      <path d="M10 46 L14 54 L18 46 L22 54 L26 46" stroke="#5fd3c4" stroke-width="2" fill="none"/>
+    </g>
+    <g id="user">
+      <circle cx="18" cy="12" r="12" fill="#16324f"/>
+      <path d="M0 48 C0 32 6 24 18 24 C30 24 36 32 36 48" fill="#16324f"/>
+    </g>
+    <g id="check-badge">
+      <circle cx="16" cy="16" r="16" fill="#2f9e5c"/>
+      <path d="M8 16 L13 21 L24 9" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </defs>
+
+  <!-- greeting row -->
+  <use href="#robot" x="30" y="24"/>
+  <rect x="120" y="20" width="1050" height="62" rx="16" fill="#d7f0e3" stroke="#16324f" stroke-width="2.5"/>
+  <text x="150" y="58" font-size="20" fill="#16324f">Hi — I evaluate ML platform/deployment decisions across six agents. What are you deciding?</text>
+
+  <!-- outer container -->
+  <rect x="20" y="108" width="1160" height="300" rx="18" fill="#eaf2fb" stroke="#16324f" stroke-width="2.5"/>
+
+  <text x="56" y="144" font-size="22" font-weight="bold" fill="#16324f">Decision Brief</text>
+  <text x="630" y="144" font-size="22" font-weight="bold" fill="#16324f">Candidate Approaches</text>
+
+  <!-- decision brief box -->
+  <rect x="48" y="160" width="540" height="220" rx="14" fill="#e4defb" stroke="#16324f" stroke-width="2.5"/>
+  <text x="70" y="196" font-size="17" fill="#16324f">
+    <tspan x="70" dy="0">decision_name: "Embedding model for</tspan>
+    <tspan x="70" dy="26">RAG retrieval service"</tspan>
+    <tspan x="70" dy="40">capability: text embeddings</tspan>
+    <tspan x="70" dy="40">current_approach: OpenAI</tspan>
+    <tspan x="70" dy="26">text-embedding-3-small (API)</tspan>
+    <tspan x="70" dy="40">success_metric: retrieval recall@10</tspan>
+  </text>
+
+  <!-- candidates box -->
+  <rect x="608" y="160" width="430" height="220" rx="14" fill="#fdf2cf" stroke="#16324f" stroke-width="2.5"/>
+  <text x="630" y="196" font-size="17" fill="#16324f">
+    <tspan x="630" dy="0">• EmbeddingGemma-2 (on-device)</tspan>
+    <tspan x="630" dy="34">• bge-large-en-v1.5 (self-hosted)</tspan>
+    <tspan x="630" dy="34">• text-embedding-3-large</tspan>
+    <tspan x="630" dy="26">  (status quo, cloud API)</tspan>
+  </text>
+
+  <!-- user avatar -->
+  <use href="#user" x="1090" y="170"/>
+  <text x="1108" y="250" font-size="16" fill="#16324f" text-anchor="middle">Engineer</text>
+
+  <!-- result row -->
+  <use href="#robot" x="30" y="424"/>
+  <rect x="120" y="420" width="840" height="62" rx="16" fill="#d7f0e3" stroke="#16324f" stroke-width="2.5"/>
+  <text x="150" y="458" font-size="20" fill="#16324f">Recommended: EmbeddingGemma-2 (on-device) — score 7.2</text>
+  <use href="#check-badge" x="975" y="434"/>
+  <text x="1020" y="458" font-size="18" fill="#16324f">(Confidence: MEDIUM)</text>
+</svg>
